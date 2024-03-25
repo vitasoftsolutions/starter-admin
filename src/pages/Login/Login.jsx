@@ -1,15 +1,20 @@
 import { Button } from "antd";
 import { useForm } from "react-hook-form";
 import { useLoginMutation } from "../../redux/services/auth/authApi";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/services/auth/authSlice";
+import { verifyToken } from "../../utilities/lib/verifyToken";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
 
   const [login] = useLoginMutation();
 
   const onSubmit = async (data) => {
-    const res = await login(data);
-    console.log(res);
+    const res = await login(data).unwrap();
+    const user = verifyToken(res.access);
+    dispatch(setUser({ user: user, token: res.access }));
   };
   return (
     <div className="h-screen flex justify-center items-center">

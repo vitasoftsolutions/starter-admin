@@ -1,18 +1,14 @@
+import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { useCurrentToken } from "../redux/services/auth/authSlice";
 
 function PrivateRoute({ children }) {
-  const token = sessionStorage.getItem("jwt_token");
-
-  if (token) {
-    const decodedToken = JSON.parse(atob(token.split(".")[1]));
-    const tokenExpirationTime = decodedToken.exp * 1000;
-    const currentTime = Date.now();
-    if (tokenExpirationTime > currentTime) {
-      return children;
-    }
+  const token = useSelector(useCurrentToken);
+  if (!token) {
+    return <Navigate to={"/login"} replace={true} />;
   }
 
-  return <Navigate to={"/login"} />;
+  return children;
 }
 
 export default PrivateRoute;
