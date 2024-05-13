@@ -1,10 +1,13 @@
+import DynamicFaviconTitle from "./components/Shared/SoftwareAsset/DynamicFaviconTitle";
 import MainLayout from "./layout/MainLayout";
+import { GlobalUtilityStyle } from "./styles/styled";
 
 function App() {
   return (
-    <div>
+    <GlobalUtilityStyle>
+      <DynamicFaviconTitle />
       <MainLayout />
-    </div>
+    </GlobalUtilityStyle>
   );
 }
 
