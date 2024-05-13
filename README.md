@@ -1,8 +1,8 @@
-# React-Starter-Kit
+# Admin-Panel-Starter-Kit
 
 ## Description
 
-This repo contains the code for the react-starter-kit for vitasoft-solution.
+This repo contains the code for the admin-panel-starter-kit for vitasoft-solution.
 
 ## Installation
 
