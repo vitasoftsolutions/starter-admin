@@ -2,6 +2,11 @@
 //components
 import AdminDashboard from "../pages/Dashboard/Admin/AdminDashboard";
 import AllUser from "../pages/Dashboard/User/AllUser/AllUser";
+import ActiveUser from "../pages/Dashboard/User/ActiveUser/ActiveUser";
+import BannedUser from "../pages/Dashboard/User/BannedUser/BannedUser";
+import EmailUnverified from "../pages/Dashboard/User/EmailUnverified/EmailUnverified";
+import EmailToUser from "../pages/Dashboard/User/EmailToUser/EmailToUser";
+import NotificationToUser from "../pages/Dashboard/User/NotificationToUser/NotificationToUser";
 
 //icons
 import { TbDashboard } from "react-icons/tb";
@@ -51,6 +56,36 @@ export const userPaths = [
         path: "all-users",
         icon: MdPeopleAlt,
         element: <AllUser />,
+      },
+      {
+        name: "Active Users",
+        path: "active-users",
+        icon: MdPeopleAlt,
+        element: <ActiveUser />,
+      },
+      {
+        name: "Banned Users",
+        path: "banned-users",
+        icon: MdPeopleAlt,
+        element: <BannedUser />,
+      },
+      {
+        name: "Email Unverified",
+        path: "email-unverified",
+        icon: MdPeopleAlt,
+        element: <EmailUnverified />,
+      },
+      {
+        name: "Email To Users",
+        path: "email-to-users",
+        icon: MdPeopleAlt,
+        element: <EmailToUser />,
+      },
+      {
+        name: "Notification To Users",
+        path: "notification-to-users",
+        icon: MdPeopleAlt,
+        element: <NotificationToUser />,
       },
     ],
   },
